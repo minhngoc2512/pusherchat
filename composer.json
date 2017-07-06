@@ -1,0 +1,25 @@
+{
+    "name": "chat/pusherchat",
+    "description": "Package make by minh",
+    "type": "library",
+    "license": "dev-master",
+    "authors": [
+        {
+            "name": "Minh Ngoc",
+            "email": "minhngoc2512@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+	
+      
+    },
+	"autoload": {
+		
+		"psr-4": {
+		  
+		    "Chat\\PusherChat\\":"src"
+		}
+	   }
+
+}

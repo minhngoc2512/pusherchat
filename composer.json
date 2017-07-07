@@ -1,5 +1,5 @@
 {
-    "name": "chat/pusherchat",
+    "name": "minh/pusherchat",
     "description": "Demo pakage chat realtime",
     "type": "plugin",
     "license": "DEMO",
@@ -16,7 +16,7 @@
         
         "psr-4": {
           
-            "Chat\\PusherChat\\":"src"
+            "Minh\\PusherChat\\":"src"
         }
     }
 

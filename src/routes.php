@@ -7,11 +7,11 @@
  */
 
 
-Route::post('message','chat\pusherchat\ChatController@sendNotification');
+Route::post('message','minh\pusherchat\ChatController@sendNotification');
 
 
-Route::get('chat','chat\pusherchat\ChatController@index');
-Route::post('sendmessage','chat\pusherchat\ChatController@SendMessage');
-Route::get('/FormReceive/{name}/{NameChannel}','chat\pusherchat\ChatController@getFormReceive');
-Route::get('/FormSend/{name}/{NameChannel}','chat\pusherchat\ChatController@getFormsend');
+Route::get('chat','minh\pusherchat\ChatController@index');
+Route::post('sendmessage','minh\pusherchat\ChatController@SendMessage');
+Route::get('/FormReceive/{name}/{NameChannel}','minh\pusherchat\ChatController@getFormReceive');
+Route::get('/FormSend/{name}/{NameChannel}','minh\pusherchat\ChatController@getFormsend');
 

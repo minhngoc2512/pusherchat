@@ -1,6 +1,6 @@
 <?php
 
-namespace Chat\PusherChat\Event;
+namespace Minh\PusherChat\Event;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;

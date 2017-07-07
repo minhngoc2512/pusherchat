@@ -1,13 +1,13 @@
 <?php
 
-namespace Chat\PusherChat;
+namespace Minh\PusherChat;
 
 use App\Http\Controllers\Controller;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Chat\PusherChat\Event\SentMessage;
-use Chat\PusherChat\Event\MemberOnline;
+use Minh\PusherChat\Event\SentMessage;
+use Minh\PusherChat\Event\MemberOnline;
 use Illuminate\Support\Facades\Auth;
 
 use DB;

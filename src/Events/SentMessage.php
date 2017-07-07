@@ -1,6 +1,6 @@
 <?php
 
-namespace Chat\PusherChat\Event;
+namespace Minh\PusherChat\Event;
 
 use App\Message;
 use App\User;

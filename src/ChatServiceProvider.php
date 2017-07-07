@@ -1,6 +1,6 @@
 <?php
 
-namespace Chat\PusherChat;
+namespace Minh\PusherChat;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
@@ -44,7 +44,7 @@ class ChatServiceProvider extends ServiceProvider
     public function register()
     {
         //include __DIR__.'/routes.php';
-        $this->app->make('Chat\PusherChat\ChatController');
+        $this->app->make('Minh\PusherChat\ChatController');
         //
     }
 }

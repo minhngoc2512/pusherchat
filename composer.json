@@ -16,7 +16,7 @@
         
         "psr-4": {
           
-            "Minh\\Timezones\\":"src"
+            "Chat\\PusherChat\\":"src"
         }
     }
 

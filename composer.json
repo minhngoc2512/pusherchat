@@ -1,25 +1,24 @@
 {
     "name": "chat/pusherchat",
-    "description": "Package make by minh",
-    "type": "library",
-    "license": "dev-master",
+    "description": "Demo pakage chat realtime",
+    "type": "plugin",
+    "license": "DEMO",
     "authors": [
         {
-            "name": "Minh Ngoc",
-            "email": "minhngoc2512@yahoo.com"
+            "name": "minh",
+            "email": "minh_dev@email.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-	
-      
     },
-	"autoload": {
-		
-		"psr-4": {
-		  
-		    "Chat\\PusherChat\\":"src"
-		}
-	   }
+    "autoload": {
+        
+        "psr-4": {
+          
+            "Minh\\Timezones\\":"src"
+        }
+    }
 
-}
+    
+  }

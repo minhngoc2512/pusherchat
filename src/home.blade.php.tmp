@@ -93,6 +93,8 @@
 
             var message = $('#text-message-'+NameChannel).val();
             $('#text-message-'+NameChannel).val('');
+            
+            
 
             $.post('sendmessage', {
                 '_token': $('meta[name=csrf-token]').attr('content'),
@@ -133,7 +135,7 @@
 
                             //  this.Channel_Private = NameChannel;
                             var PrivateChannel = pusher_private.subscribe('private-chat.' + Name_ChannelSend_Private);
-                            PrivateChannel.bind("Chat\\PusherChat\\Event\\SentMessage", function (data) {
+                            PrivateChannel.bind("Minh\\PusherChat\\Event\\SentMessage", function (data) {
 
                                 if (data.user.name != '{{auth::user()->name}}') {
 
@@ -211,32 +213,36 @@
         let channel = null;
         function getNoticationPresence(){
             channel = pusher.subscribe('presence-memberOnline.1');
-            channel.bind('Chat\\PusherChat\\Event\\MemberOnline', function (data) {
+            channel.bind('Minh\\PusherChat\\Event\\MemberOnline', function (data) {
+
 
                 if ('{{auth::user()->name}}' == data.user2) {
 
                     var NameChannel = data.NameChannel;
                     //  this.Channel_Private = NameChannel;
                     var CheckChannel = data.CheckChannel;
-                    var PrivateChannel = pusher_private.subscribe('private-chat.'+NameChannel);
-                    PrivateChannel.bind("Chat\\PusherChat\\Event\\SentMessage", function (data) {
 
-                        if(data.user.name!='{{auth::user()->name}}'){
-                            new Notification('Tin nhắn mới từ '+data.user.name,
-                                {
-                                    body: data.message, // Nội dung thông báo
-                                    icon: 'http://www.freeiconspng.com/uploads/message-icon-png-14.png'// Hình ảnh
-                                    // tag: 'https://freetuts.net/' // Đường dẫn
-                                }
-                            );
-                            $('#list-message-'+NameChannel).append(' <li class="alert alert-info small"> '+data.message+' </li>');
-                        }
-
-
-                    });
                     //Check form chat exist! CheckChannel
+
+
                     if($('#message-content-'+NameChannel).attr('class')==null&& $('#message-content-'+CheckChannel).attr('class')==null) {
 
+                        var PrivateChannel = pusher_private.subscribe('private-chat.'+NameChannel);
+                        PrivateChannel.bind("Minh\\PusherChat\\Event\\SentMessage", function (data) {
+
+                            if(data.user.name!='{{auth::user()->name}}'){
+                                new Notification('Tin nhắn mới từ '+data.user.name,
+                                    {
+                                        body: data.message, // Nội dung thông báo
+                                        icon: 'http://www.freeiconspng.com/uploads/message-icon-png-14.png'// Hình ảnh
+                                        // tag: 'https://freetuts.net/' // Đường dẫn
+                                    }
+                                );
+                                $('#list-message-'+NameChannel).append(' <li class="alert alert-info small"> '+data.message+' </li>');
+                            }
+
+
+                        });
 
                         $.get('FormReceive/' + data.user.name + '/' + NameChannel, function (data) {
                             $('#chat-message').append(data);

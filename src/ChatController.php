@@ -67,11 +67,11 @@ class ChatController extends Controller
     {
 
         $data = ' 
-                <li style="float: left;width: 266px;" >
+                <li style="float: left;width: 266px;"  id="li_close-'.$NameChannel.'">
            <div class="clearfix" style="height: auto;float: left; width: 276px; clear: both;content:\'-\';display: block;position: fixed;bottom: 2px;;padding: 5px;margin-left: 10px ">
       
         <div class="panel panel-default " style="">
-            <div class="panel-heading">'.$name.'  <button id="btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-success" > X </button> </div>
+            <div class="panel-heading">'.$name.'  <button id="btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-success" > _ </button>  <button id="X_btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-danger" > X </button> </div>
             <div class="panel-body" id="message-content-'.$NameChannel.'" >
                 <ul style="overflow: scroll;max-height: 250px" id="list-message-'.$NameChannel.'">
                     
@@ -91,6 +91,10 @@ class ChatController extends Controller
     $(\'#btn-message-'.$NameChannel.'\').click(function() {
       $(\'#message-content-'.$NameChannel.'\').toggle();
     });
+    $(\'#X_btn-message-'.$NameChannel.'\').click(function() {
+      $(\'#li_close-'.$NameChannel.'\').remove();
+    });
+    
     
     </script>
     
@@ -106,10 +110,10 @@ class ChatController extends Controller
     public function getFormsend($name,$NameChannel){
         $data = '
         <li style="float: left;width: 266px;" >
-           <div class="clearfix" style="height: auto;float: left; width: 276px; clear: both;content:\'-\';display: block;position: fixed;bottom: 2px;;padding: 5px;margin-left: 10px ">
+           <div class="clearfix" style="height: auto;float: left; width: 276px; clear: both;content:\'-\';display: block;position: fixed;bottom: 2px;;padding: 5px;margin-left: 10px " id="li_close-'.$NameChannel.'">
       
         <div class="panel panel-default " style="">
-            <div class="panel-heading">'.$name.' <button id="btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-success" > X</button> </div>
+            <div class="panel-heading">'.$name.' <button id="btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-success" > _</button>  <button id="X_btn-message-'.$NameChannel.'" style="float: right; margin-top: -5px;" class="btn btn-danger" > X </button></div>
             <div class="panel-body" id="message-content-'.$NameChannel.'" >
                 <ul style="overflow: scroll;max-height: 250px" id="list-message-'.$NameChannel.'">
                     
@@ -128,6 +132,9 @@ class ChatController extends Controller
     $(\'#btn-message-'.$NameChannel.'\').click(function() {
       $(\'#message-content-'.$NameChannel.'\').toggle();
     });
+     $(\'#X_btn-message-'.$NameChannel.'\').click(function() {
+      $(\'#li_close-'.$NameChannel.'\').remove();
+    });
     
     </script>
     
@@ -140,3 +147,4 @@ class ChatController extends Controller
 
     //
 }
+

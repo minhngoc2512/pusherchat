@@ -12,3 +12,4 @@ How install and use this package:
     <li> Include on blade template before tag </body>: " @include('ChatPusher.home');"</li>
     <li> Run command artisan : "php artisan serve" </li>
 </ol>
+

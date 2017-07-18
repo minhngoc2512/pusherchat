@@ -1,6 +1,6 @@
 package make by minhngoc.
 Email: minhngoc2512@yahoo.com
-How install and use this package:
+Install and use package PUSHERCHAT:
 <ol>
     <li>Run command artisan: "php artisan make:auth"</li>
     <li>Create a account on website <a href="http://pusher.com" >Pusher</a></li>

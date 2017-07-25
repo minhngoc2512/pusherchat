@@ -10,8 +10,10 @@
 Route::post('message','minh\pusherchat\ChatController@sendNotification');
 
 
-Route::get('chat','minh\pusherchat\ChatController@index');
+
 Route::post('sendmessage','minh\pusherchat\ChatController@SendMessage');
 Route::get('/FormReceive/{name}/{NameChannel}','minh\pusherchat\ChatController@getFormReceive');
 Route::get('/FormSend/{name}/{NameChannel}','minh\pusherchat\ChatController@getFormsend');
+Route::get('changeStatusMessage/{name}/{channel}','minh\pusherchat\ChatController@setStatusMessage');
 
+Route::get('FormSendGroup/{name}','minh\pusherchat\ChatController@getFormGroup');

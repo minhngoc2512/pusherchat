@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+	   "pusher/pusher-php-server": "~2.6"
     },
     "autoload": {
         

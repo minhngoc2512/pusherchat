@@ -7,6 +7,7 @@ Install and use package PUSHERCHAT:
     <li>Change content file .env on folder root:PUSHER_APP_ID,PUSHER_APP_KEY,PUSHER_APP_SECRET,BROADCAST_DRIVER=pusher in your server Pusher.</li>
     <li>In file config/app.php uncomment  App\Providers\BroadcastServiceProvider::class,</li>
     <li> Add service provider " Minh\PusherChat\ChatServiceProvider::class," in file config/app.php on array "provider"</li>
+	<li>Enter command: composer require pusher/pusher-php-server "~2.6"</li>
     <li> You may define a meta tag in your application's head HTML element: <code><meta name="csrf-token" content="{{ csrf_token() }}"> </li></code>
     <li> Run command artisan : "php artisan migrate"</li>
     <li> Include on blade template before tag "/body": " @include('ChatPusher.home');"</li>
